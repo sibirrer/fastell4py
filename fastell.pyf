@@ -1,0 +1,92 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module _fastell ! in
+    interface  ! in :_fastell
+        subroutine ellipphi(x1,x2,q,gam,arat,s2,phi) ! in :fastell:src/fastell.f
+            double precision :: x1
+            double precision :: x2
+            double precision :: q
+            double precision :: gam
+            double precision :: arat
+            double precision :: s2
+            double precision :: phi
+            double precision :: ex1
+            double precision :: ex2
+            double precision :: earat
+            double precision :: es2
+            double precision :: egam
+            common /ellinfo/ ex1,ex2,earat,es2,egam
+        end subroutine ellipphi
+
+
+        subroutine ellipphi_array(x1,x2,q,gam,arat,s2,phi, n) ! in :fastell:src/fastell.f
+            double precision dimension(n) :: x1
+            double precision dimension(n) :: x2
+            double precision :: q
+            double precision :: gam
+            double precision :: arat
+            double precision :: s2
+            double precision dimension(n) :: phi
+            integer :: n
+        end subroutine ellipphi_array
+
+        subroutine fastellmag(x1in,x2in,q,gam,arat,s2,defl,magmx) ! in :fastell:src/fastell.f
+            double precision :: x1in
+            double precision :: x2in
+            double precision :: q
+            double precision :: gam
+            double precision :: arat
+            double precision :: s2
+            double precision dimension(2) :: defl
+            double precision dimension(2,2) :: magmx
+            integer, optional :: ifirst1=0
+            integer, optional :: ifirst2=0
+            common /ellfirsttime/ ifirst1,ifirst2
+        end subroutine fastellmag
+
+        subroutine fastellmag_array(x1in,x2in,q,gam,arat,s2,defl1,defl2,magmx_xx,magmx_xy,magmx_yy, n) ! in :fastell:src/fastell.f
+            double precision dimension(n) :: x1in
+            double precision dimension(n) :: x2in
+            double precision :: q
+            double precision :: gam
+            double precision :: arat
+            double precision :: s2
+            double precision dimension(n) :: defl1
+            double precision dimension(n) :: defl2
+            double precision dimension(n) :: magmx_xx
+            double precision dimension(n) :: magmx_xy
+            double precision dimension(n) :: magmx_yy
+            integer :: n
+        end subroutine fastellmag_array
+
+        subroutine fastelldefl(x1in,x2in,q,gam,arat,s2,defl) ! in :fastell:src/fastell.f
+            double precision :: x1in
+            double precision :: x2in
+            double precision :: q
+            double precision :: gam
+            double precision :: arat
+            double precision :: s2
+            double precision dimension(2) :: defl
+            integer :: ifirst1
+            integer :: ifirst2
+            common /ellfirsttime/ ifirst1,ifirst2
+        end subroutine fastelldefl
+
+        subroutine fastelldefl_array(x1in,x2in,q,gam,arat,s2,defl1,defl2,n) ! in :fastell:src/fastell.f
+            double precision dimension(n) :: x1in
+            double precision dimension(n) :: x2in
+            double precision :: q
+            double precision :: gam
+            double precision :: arat
+            double precision :: s2
+            double precision dimension(n) :: defl1
+            double precision dimension(n) :: defl2
+            integer :: n
+        end subroutine fastelldefl_array
+
+    end interface 
+end python module _fastell
+
+! This file was auto-generated with f2py (version:2).
+! See http://cens.ioc.ee/projects/f2py2e/
