@@ -2,7 +2,10 @@
 
 import os
 import setuptools
-from numpy.distutils.core import setup
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
 
 
 readme = open('README.rst').read()
@@ -24,7 +27,7 @@ def configuration(parent_package='',top_path=None):
     config = Configuration("fastell4py", parent_package, top_path,
                            namespace_packages = ['fastell4py'],
                            version='0.1.0',
-                           author  = 'Joel Akeret',
+                           author = 'Joel Akeret',
                            author_email="jakeret@phys.ethz.ch",
                            description='Wrapper for the fastell fortran code',
                            url='http://www.astro.ethz.ch/refregier/research/index',
