@@ -69,3 +69,9 @@ c     obtained as the inverse matrix of delta_{ij}-J_{ij}.
 c
 c     A simple example program is included.
 
+
+Installation
+--------
+c     The installation requires a fortran compiler installed.
+c     >>> cd projectrepo
+c     >>> python setup.py install --user
