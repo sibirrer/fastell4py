@@ -75,3 +75,6 @@ Installation
 The installation requires a fortran compiler installed.
  >>> cd projectrepo
  >>> python setup.py install --user
+ 
+There might be a confusion with different compilers. Make sure that the path in the .config (.profile) file points at
+the right compiler.
