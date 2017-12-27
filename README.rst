@@ -73,7 +73,7 @@ A simple example program is included.
 Installation
 --------
 The installation requires a fortran compiler installed.
- >>> cd projectrepo
+ >>> cd fastell4py
  >>> python setup.py install --user
  
 There might be a confusion with different compilers. Make sure that the path in the .config (.profile) file points at
