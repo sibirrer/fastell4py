@@ -19,7 +19,7 @@ The full documentation can be generated with Sphinx"""
 
 history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
-required = ["numpy"]
+required = ["numpy>=1.13"]
 tests_require=['pytest>=2.3'] #for testing
 
 PACKAGE_PATH = os.path.abspath(os.path.join(__file__, os.pardir))
@@ -55,7 +55,7 @@ setup(configuration=configuration,
         platforms = ["any"],
         install_requires=[required],
         package_data={"": ["LICENSE"]},
-        license='Proprietary',
+        license='MIT',
         zip_safe = False,
         classifiers=[
         "Development Status :: 3 - Alpha",

@@ -36,7 +36,7 @@ class TestFastell4py(object):
         arat = 0.9
         s = 0.01
         alpha1, alpha2 = fastell4py.fastelldefl(x1, x2, q, gam, arat, s)
-        print alpha1, alpha2, 'alpha1, alpha2'
+        print(alpha1, alpha2, 'alpha1, alpha2')
         assert alpha1[0] == 0.49802187030058409
         assert alpha2[0] == 1.604771432322617
 
@@ -55,7 +55,7 @@ class TestFastell4py(object):
         s = 0.01
 
         alpha1, alpha2, f_xx, f_yy, f_xy = fastell4py.fastellmag(x1, x2, q, gam, arat, s)
-        print alpha1, alpha2, f_xx, f_yy, f_xy, 'alpha1, alpha2, f_xx, f_yy, f_xy'
+        print(alpha1, alpha2, f_xx, f_yy, f_xy, 'alpha1, alpha2, f_xx, f_yy, f_xy')
         assert alpha1[0] == 0.49802187030058409
         assert alpha2[0] == 1.604771432322617
         assert f_xx[0] == 0.45275802445408392
